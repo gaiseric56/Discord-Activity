@@ -2,7 +2,7 @@ const { Client } = require('discord.js-selfbot-v13');
 const client = new Client();
 
 client.on('ready', async () => {
-  console.log(Logged in as ${client.user.tag});
+  console.log(`Logged in as ${client.user.tag}`);
 
   const startTime = Date.now();
 
