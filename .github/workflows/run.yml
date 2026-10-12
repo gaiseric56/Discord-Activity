@@ -2,7 +2,6 @@ name: Run Discord Custom Activity
 
 on:
   schedule:
-    # يعمل تلقائياً كل 5 دقائق لضمان عدم توقفه
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
@@ -16,10 +15,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '20'
 
       - name: Install dependencies
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Run Script
         env:
