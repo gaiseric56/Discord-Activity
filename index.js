@@ -2,11 +2,16 @@ const { Client, RichPresence } = require('discord.js-selfbot-v13');
 const client = new Client();
 
 // Application ID للتطبيق (Developer Portal)
-const APP_ID = '1476646850747699381';
+const APP_ID = 'ضع_الـID_هنا';
 
 // رابط الـ GIF المرفوع في GitHub (المستودع يجب أن يكون Public)
 const IMAGE_URL =
-  'https://raw.githubusercontent.com/gaiseric56/Discord-Activity/refs/heads/main/cover.gif';
+  'https://raw.githubusercontent.com/gaiseric56/Discord-Activity/main/cover.gif';
+
+// وقت البداية الثابت (بتوقيت بغداد +03:00): المؤقت يعدّ منه باستمرار
+// ولا يتصفّر عند إعادة تشغيل الـ workflow، ويصل إلى مئات الساعات.
+// لتبدأ من الصفر: اكتب وقت رفعك للملف تقريباً بهذه الصيغة.
+const START_TIME = new Date('2026-10-13T18:34:00+03:00').getTime();
 
 async function setActivity() {
   try {
@@ -19,8 +24,8 @@ async function setActivity() {
       .setDetails('Survival')
       .setAssetsLargeImage(img.external_asset_path)
       .setAssetsLargeText('Life')
-      .setParty({ current: 1, max: 1, id: 'life_party' });
-    // لا يوجد setStartTimestamp، لذلك لن يظهر مؤقت
+      .setParty({ current: 1, max: 1, id: 'life_party' })
+      .setStartTimestamp(START_TIME);
 
     client.user.setPresence({ activities: [presence] });
     console.log('Activity updated');
@@ -32,7 +37,7 @@ async function setActivity() {
 client.on('ready', () => {
   console.log('Logged in as ' + client.user.tag);
   setActivity();
-  setInterval(setActivity, 10 * 60 * 1000); // إعادة التعيين كل 10 دقائق
+  setInterval(setActivity, 10 * 60 * 1000);
 });
 
 client.login(process.env.DISCORD_TOKEN).catch((err) => {
