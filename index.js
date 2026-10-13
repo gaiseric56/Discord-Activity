@@ -6,7 +6,7 @@ const APP_ID = '1476646850747699381';
 
 // رابط الـ GIF المرفوع في GitHub (المستودع يجب أن يكون Public)
 const IMAGE_URL =
-  'https://raw.githubusercontent.com/gaiseric56/Discord-Activity/refs/heads/main/cover.gif?token=GHSAT0AAAAAAEIYKTYOVXL6CGZGZJJYXUX62WOJFYQ';
+  'https://raw.githubusercontent.com/gaiseric56/Discord-Activity/refs/heads/main/cover.gif';
 
 async function setActivity() {
   try {
