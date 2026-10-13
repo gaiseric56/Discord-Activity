@@ -2,7 +2,7 @@ const { Client, RichPresence } = require('discord.js-selfbot-v13');
 const client = new Client();
 
 // Application ID للتطبيق (Developer Portal)
-const APP_ID = 'ضع_الـID_هنا';
+const APP_ID = '1476646850747699381';
 
 // رابط الـ GIF المرفوع في GitHub (المستودع يجب أن يكون Public)
 const IMAGE_URL =
