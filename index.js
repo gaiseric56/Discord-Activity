@@ -27,7 +27,7 @@ async function setActivity() {
 }
 
 client.on('ready', () => {
-  console.log('Logged in as ${client.user.tag'});
+  console.log('Logged in as ' + client.user.tag);
   setActivity();
   setInterval(setActivity, 10 * 60 * 1000); // إعادة التعيين كل 10 دقائق
 });
