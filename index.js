@@ -21,7 +21,7 @@ async function setActivity() {
       .setApplicationId(APP_ID)
       .setType('PLAYING')
       .setName('Life')
-      .setDetails('Survival')
+      .setDetails('Survival (Hardcore)')
       .setAssetsLargeImage(img.external_asset_path)
       .setAssetsLargeText('Life')
       .setParty({ current: 1, max: 1, id: 'life_party' })
